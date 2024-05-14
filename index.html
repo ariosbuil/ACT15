@@ -8,7 +8,6 @@
     <script src="https://kit.fontawesome.com/8a16ea263d.js" crossorigin="anonymous"></script>
     <!-- Flowbite -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-    <title>Inici</title>
 </head>
 
 
@@ -26,6 +25,16 @@
         padding: 0;
         box-sizing: border-box;
     }
+
+    @keyframes color-change {
+        0% { color: red; }
+        50% { color: green; }
+        100% { color: yellow; }
+    }
+
+    .animate-color-change {
+        animation: color-change 1s infinite;
+    }
 </style>
 
 <body>
@@ -33,13 +42,12 @@
         <!-- Nav Bar -->
         <nav class="bg-orange-200">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="assets/Logo.png" class="w-28" alt="Logo" />
                 </a>
                 <button data-collapse-toggle="navbar-default" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-900"
                     aria-controls="navbar-default" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 17 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -51,49 +59,67 @@
                         class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-amber-900 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-amber-700 md:bg-orange-200">
                         <li>
                             <a href="#"
-                                class="block py-2 px-3 text-black rounded hover:bg-orange-200 md:bg-transparent md:p-0"
+                                class="block py-2 px-3 text-black rounded md:bg-transparent md:p-0"
                                 aria-current="page">Inici</a>
                         </li>
                         <li>
                             <a href="#"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-orange-200 md:border-0 md:p-0 dark:text-black">Galeria</a>
+                                class="block py-2 px-3 text-gray-900 rounded md:border-0 md:p-0 dark:text-black">Galeria</a>
                         </li>
                         <li>
                             <a href="#"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-orange-200 md:border-0 md:p-0 dark:text-black">Ofertes
+                                class="block py-2 px-3 text-gray-900 rounded md:border-0 md:p-0 dark:text-black">Ofertes
                                 Especials</a>
                         </li>
                         <li>
                             <a href="#"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-orange-200 md:border-0 md:p-0 dark:text-black">Contacte</a>
+                                class="block py-2 px-3 text-gray-900 rounded md:border-0 md:p-0 dark:text-black">Contacte</a>
                         </li>
                         <li>
                             <a href="#"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-orange-200 md:border-0 md:p-0 dark:text-black">Mapa</a>
+                                class="block py-2 px-3 text-gray-900 rounded md:border-0 md:p-0 dark:text-black">Mapa</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-
-        <!-- Hero Section -->
-        <section id="inicio" class="py-20">
+        <!-- Contacto Section -->
+        <section id="contacto" class="py-20">
             <div class="container mx-auto text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">Bienvenido a nuestro Forn de Pa de Barri
-                </h1>
-                <p class="text-lg text-gray-600">Saborea el auténtico sabor de la tradición</p>
-                <a href="#productos"
-                    class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 mt-8 rounded-lg">Ver
-                    nuestros productos</a>
+                <h1 class="text-2xl md:text-4xl font-bold text-gray-800 mb-8 animate-color-change">Contacto</h1>
+                <p class="text-gray-600 mb-4">¡Contáctanos para hacer tu pedido o solicitar más información!</p>
+                <form action="enviar.php" method="post" class="max-w-lg mx-auto">
+                    <div class="mb-4">
+                        <input type="text" id="nombre" name="nombre"
+                            class="block w-full px-4 py-3 rounded-lg bg-gray-200 border-transparent focus:border-orange-500 focus:bg-white focus:ring-0"
+                            placeholder="Nombre">
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" id="email" name="email"
+                            class="block w-full px-4 py-3 rounded-lg bg-gray-200 border-transparent focus:border-orange-500 focus:bg-white focus:ring-0"
+                            placeholder="Email">
+                    </div>
+                    <div class="mb-4">
+                        <textarea id="mensaje" name="mensaje"
+                            class="block w-full px-4 py-3 rounded-lg bg-gray-200 border-transparent focus:border-orange-500 focus:bg-white focus:ring-0"
+                            placeholder="Mensaje" rows="4"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 animate-color-change">Enviar</button>
+                </form>
+                <div class="mt-8">
+                    <p class="text-gray-600">¡Visítanos en nuestra dirección!</p>
+                    <p class="text-gray-600">Teléfono: 123-456-789</p>
+                    <p class="text-gray-600">Email: info@forndepabarri.com</p>
+                </div>
             </div>
         </section>
-
 
         <!-- Galeria Section -->
         <section id="galeria" class="py-20">
             <div class="container mx-auto text-center">
-                <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-8">Galería</h2>
+                <h1 class="text-2xl md:text-4xl font-bold text-gray-800 mb-8 animate-color-change">Galería</h1>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <img src="assets/photo1.jpg" class="rounded-lg">
                     <img src="assets/photo2.jpg" class="rounded-lg">
@@ -105,24 +131,24 @@
         <!-- Ofertas Especiales Section -->
         <section id="ofertas" class="py-20">
             <div class="container mx-auto text-center">
-                <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-8">Special Offers</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-8 animate-color-change">Special Offers</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Offer 1</h3>
+                        <h1 class="text-xl font-bold text-gray-800 mb-2">Offer 1</h1>
                         <p class="text-gray-600 mb-4 leading-3">Discover our amazing offer of freshly baked breads every morning.
                             From classic baguettes to delicious pastries, we have something for everyone. Come and visit
                             us today!</p>
                         <p class="text-orange-500 font-bold">$10.00</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Offer 2</h3>
+                        <h1 class="text-xl font-bold text-gray-800 mb-2">Offer 2</h1>
                         <p class="text-gray-600 mb-4 leading-3">Indulge in our mouthwatering selection of artisanal cakes and
                             desserts. Made with the finest ingredients and expert craftsmanship, our treats are sure to
                             satisfy your sweet cravings.</p>
                         <p class="text-orange-500 font-bold">$15.00</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Offer 3</h3>
+                        <h1 class="text-xl font-bold text-gray-800 mb-2">Offer 3</h1>
                         <p class="text-gray-600 mb-4 leading-3">Treat yourself to a hearty breakfast with our special brunch
                             offer. From fluffy pancakes to savory quiches, our brunch menu is packed with delicious
                             options to start your day right.</p>
@@ -133,42 +159,22 @@
         </section>
 
 
-        <!-- Contacto Section -->
-        <section id="contacto" class="py-20">
+        <!-- Hero Section -->
+        <section id="inicio" class="py-20">
             <div class="container mx-auto text-center">
-                <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-8">Contacto</h2>
-                <p class="text-gray-600 mb-4">¡Contáctanos para hacer tu pedido o solicitar más información!</p>
-                <form action="enviar.php" method="post" class="max-w-lg mx-auto">
-                    <div class="mb-4">
-                        <input type="text" id="nombre" name="nombre"
-                            class="block w-full px-4 py-3 rounded-lg bg-gray-200 border-transparent focus:border-orange-500 focus:bg-white focus:ring-0"
-                            placeholder="Nombre" required>
-                    </div>
-                    <div class="mb-4">
-                        <input type="email" id="email" name="email"
-                            class="block w-full px-4 py-3 rounded-lg bg-gray-200 border-transparent focus:border-orange-500 focus:bg-white focus:ring-0"
-                            placeholder="Email" required>
-                    </div>
-                    <div class="mb-4">
-                        <textarea id="mensaje" name="mensaje"
-                            class="block w-full px-4 py-3 rounded-lg bg-gray-200 border-transparent focus:border-orange-500 focus:bg-white focus:ring-0"
-                            placeholder="Mensaje" rows="4" required></textarea>
-                    </div>
-                    <button type="submit"
-                        class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600">Enviar</button>
-                </form>
-                <div class="mt-8">
-                    <p class="text-gray-600">¡Visítanos en nuestra dirección!</p>
-                    <p class="text-gray-600">Teléfono: 123-456-789</p>
-                    <p class="text-gray-600">Email: info@forndepabarri.com</p>
-                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4 animate-color-change">Bienvenido a nuestro Forn de Pa de Barri
+                </h1>
+                <p class="text-lg text-gray-600">Saborea el auténtico sabor de la tradición</p>
+                <a href="#productos"
+                    class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 mt-8 rounded-lg">Ver
+                    nuestros productos</a>
             </div>
         </section>
 
         <!-- Mapa Section -->
         <section id="mapa" class="py-20">
             <div class="flex flex-col justify-center items-center w-full text-center">
-                <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-8">Mapa</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-800 mb-8 animate-color-change">Mapa</h2>
                 <div class="embed-responsive aspect-w-16 aspect-h-9">
                     <iframe class="embed-responsive-item rounded-lg"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12495.296771073965!2d-0.15223178313952757!3d51.52877153687249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876053d2f7fc04f%3A0x1ecf760d60b68b27!2sBaker%20Street%20Station!5e0!3m2!1sen!2suk!4v1634676376966!5m2!1sen!2suk"
@@ -177,10 +183,19 @@
             </div>
         </section>
 
+
+        
         <!-- Tailwind -->
         <script src="tailwind.js"></script>
         <!-- Flowbite -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+        <!-- Script -->
+        <script>
+            // Alert cada 3 segundos
+            setTimeout(() => {
+                alert('Hii')
+            }, 3000)
+        </script>
 </body>
 
 </html>
